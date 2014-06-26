@@ -1,8 +1,8 @@
 package Datastructure;
 
 public class ArrayStack {
-    
-    int[] num = new int[10];
+    static final int MAX_STACK_INT = 10;
+    int[] num = new int[MAX_STACK_INT];
     private int top=-1;
     
     /**
@@ -11,7 +11,7 @@ public class ArrayStack {
      * @return
      */
     public int[] push(int d) {
-        if(top>=9) {
+        if(top >= MAX_STACK_INT - 1) {
             throw new IndexOutOfBoundsException();
         }
         
@@ -24,7 +24,6 @@ public class ArrayStack {
      * @return
      */
     public int pop() {
-        System.out.println(top);
         if(top < 0) {
             throw new IndexOutOfBoundsException();
         }
