@@ -14,7 +14,7 @@ public class StackTest {
 
         @Test
         public void testStack() {
-            ArrayStack stack = new ArrayStack();
+            ArrayStack stack = new ArrayStack(5);
             
             stack.push(1);
             stack.push(2);
@@ -24,15 +24,16 @@ public class StackTest {
             assertThat(_actual, is(2));
             _actual = stack.pop();
             assertThat(_actual, is(1));
-            
         }
     
         @Test (expected=IndexOutOfBoundsException.class)
         public void testException() {
             
-            ArrayStack stack = new ArrayStack();
+            ArrayStack stack = new ArrayStack(1);
             
             stack.pop();
+            stack.pop();
+
             //assertThat(node.d, is(0));
         }
 

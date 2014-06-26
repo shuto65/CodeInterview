@@ -1,9 +1,22 @@
 package Datastructure;
 
 public class ArrayStack {
-    static final int MAX_STACK_INT = 10;
-    int[] num = new int[MAX_STACK_INT];
-    private int top=-1;
+    //int[] num = new int[MAX_STACK_INT];
+    private int top;
+    private int maxsize;
+    
+    int[] num;
+    
+    public ArrayStack (int size){
+        if(size <= 0) {
+            throw new IllegalArgumentException();
+        }
+        this.maxsize = size;
+        this.top = -1;
+        
+        this.num = new int[size];
+    }
+    
     
     /**
      * 引数の値をスタックにpush
@@ -11,7 +24,7 @@ public class ArrayStack {
      * @return
      */
     public int[] push(int d) {
-        if(top >= MAX_STACK_INT - 1) {
+        if(top >= maxsize - 1) {
             throw new IndexOutOfBoundsException();
         }
         
