@@ -1,8 +1,8 @@
 package Datastructure;
+import sun.plugin.dom.exception.InvalidStateException;
 
+import java.io.Serializable;
 public class ListQueue {
-	//int head=0;
-//	int tail=0;
 	Node head=null;
 	Node tail=null;
 
@@ -14,11 +14,11 @@ public class ListQueue {
 			this.d = d;
 			this.next = null;
 		}
-		
+
 		public int getItem(){
 			return this.d;
 		}
-		
+
 		@Override
 		public boolean equals(Object obj){
 			if(this == obj){
@@ -34,22 +34,42 @@ public class ListQueue {
 			return false;	  
 		}
 	}
-	public void make_head(){
-		
-	}
+
 	public void enqueue(int d){
-		if(this.tail == null)
-			this.head = new Node(d);
+		if(this.isQueueEmpty()) {
+            this.addHead(d);
+        }
 		else{
-			Node prevtail = this.tail;
-			prevtail.next = new Node(d);
+            this.addTail(d);
 		}
 	}
-	
-	public void dequeue(){
+
+    public void addHead(int d){
+        this.head = new Node(d);
+        this.tail = this.head;
+    }
+
+    public void addTail(int d){
+        Node tail_tmp = this.tail;
+        tail_tmp.next = new Node(d);
+        this.tail = tail_tmp.next;
+    }
+
+	public int dequeue(){
+        if(this.isQueueEmpty())
+            throw new InvalidStateException("queue is empty");
+
 		Node tmp_head = this.head;
-		this.head = tmp_head.next;
-		System.out.print(tmp_head.d);
-	}
+        this.head = tmp_head.next;
+
+        if(tmp_head == this.tail)
+            this.tail = null;
+
+        return tmp_head.getItem();
+    }
+
+    public boolean isQueueEmpty(){
+        return tail == null;
+    }
 	
 }
