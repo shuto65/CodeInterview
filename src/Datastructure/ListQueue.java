@@ -6,7 +6,7 @@ public class ListQueue {
 	Node head=null;
 	Node tail=null;
 
-	public class Node{
+	private class Node{
 		int d;
 		Node next;
 		
@@ -36,7 +36,7 @@ public class ListQueue {
 	}
 
 	public void enqueue(int d){
-		if(this.isQueueEmpty()) {
+		if(this.isEmpty()) {
             this.addHead(d);
         }
 		else{
@@ -56,7 +56,7 @@ public class ListQueue {
     }
 
 	public int dequeue(){
-        if(this.isQueueEmpty())
+        if(this.isEmpty())
             throw new InvalidStateException("queue is empty");
 
 		Node tmp_head = this.head;
@@ -68,7 +68,7 @@ public class ListQueue {
         return tmp_head.getItem();
     }
 
-    public boolean isQueueEmpty(){
+    public boolean isEmpty(){
         return tail == null;
     }
 	
