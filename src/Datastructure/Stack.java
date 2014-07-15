@@ -1,9 +1,7 @@
 package Datastructure;
 
 public class Stack {
-    
-    
-    
+
         public class Node{
             public int d;
             Node next;
