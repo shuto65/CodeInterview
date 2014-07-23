@@ -1,6 +1,6 @@
 package Datastructure;
-import sun.plugin.dom.exception.InvalidStateException;
-
+import java.util.*;
+import java.lang.Exception.*;
 import java.io.Serializable;
 public class ListQueue {
 	Node head=null;
@@ -57,7 +57,7 @@ public class ListQueue {
 
 	public int dequeue(){
         if(this.isEmpty())
-            throw new InvalidStateException("queue is empty");
+            throw new EmptyQueueException("queue empty");
 
 		Node tmp_head = this.head;
         this.head = tmp_head.next;
@@ -71,5 +71,7 @@ public class ListQueue {
     public boolean isEmpty(){
         return tail == null;
     }
-	
+
+
 }
+
