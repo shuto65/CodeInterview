@@ -65,8 +65,9 @@ public class ArrayQueue<E> implements Queue<E>{
      */
     @Override
     public boolean isEmpty() {
-        if(queue[head] == null) return true;
-        return false;
+        //if(queue[head] == null) return true;
+        //return false;
+        return size() == 0;
     }
 
     /**
@@ -75,8 +76,9 @@ public class ArrayQueue<E> implements Queue<E>{
      */
     @Override
     public boolean isFull() {
-        if(size() == queue.length-1) return true;
-        return false;
+        //if(size() == queue.length-1) return true;
+        //return false;
+        return size() == queue.length - 1;
     }
 
     /**
@@ -86,10 +88,11 @@ public class ArrayQueue<E> implements Queue<E>{
      */
     @Override
     public int size() {
-        if(isEmpty()) return 0;
+        /*if(isEmpty()) return 0;
 
         if(head <= tail) return (tail - head);
 
-        return (queue.length - head + tail);
+        return (queue.length - head + tail);*/
+        return (tail - head + queue.length) % queue.length;
     }
 }
