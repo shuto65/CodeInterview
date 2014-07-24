@@ -1,13 +1,11 @@
-package Datastructure;
-
-import java.util.ArrayList;
+package Datastructure.MyQueue;
 
 /**
  * Queue using circular bounded array.
  * Note that queue is allocated with size of (size+1).
  * @param <E>
  */
-public class ArrayQueue<E> implements Queue<E>{
+public class ArrayQueue<E> implements Queue<E> {
 
     private Object[] queue;
     private int head=0;
@@ -39,7 +37,7 @@ public class ArrayQueue<E> implements Queue<E>{
      */
     @Override
     public void enqueue(E data) {
-        if(isFull()) throw new IndexOutOfBoundsException();
+        if(isFull()) throw new FullQueueException("queue is full");
 
         queue[tail] = data;
         tail = (tail + 1) % queue.length;
@@ -51,7 +49,7 @@ public class ArrayQueue<E> implements Queue<E>{
      */
     @Override
     public E dequeue() {
-        if(isEmpty()) throw new IndexOutOfBoundsException();
+        if(isEmpty()) throw new EmptyQueueException("queue is empty");
 
         E ret = (E)queue[head];
         queue[head] = null;
@@ -65,8 +63,6 @@ public class ArrayQueue<E> implements Queue<E>{
      */
     @Override
     public boolean isEmpty() {
-        //if(queue[head] == null) return true;
-        //return false;
         return size() == 0;
     }
 
@@ -76,8 +72,6 @@ public class ArrayQueue<E> implements Queue<E>{
      */
     @Override
     public boolean isFull() {
-        //if(size() == queue.length-1) return true;
-        //return false;
         return size() == queue.length - 1;
     }
 
@@ -88,11 +82,6 @@ public class ArrayQueue<E> implements Queue<E>{
      */
     @Override
     public int size() {
-        /*if(isEmpty()) return 0;
-
-        if(head <= tail) return (tail - head);
-
-        return (queue.length - head + tail);*/
         return (tail - head + queue.length) % queue.length;
     }
 }

@@ -1,4 +1,4 @@
-package Datastructure;
+package Datastructure.MyStack;
 
 public class Stack {
 

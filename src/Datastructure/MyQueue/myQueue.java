@@ -1,4 +1,4 @@
-package Datastructure;
+package Datastructure.MyQueue;
 
 import java.util.EmptyStackException;
 import java.util.Stack;

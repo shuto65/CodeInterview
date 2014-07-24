@@ -1,11 +1,11 @@
-package test;
+package test.MyStack;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Datastructure.TripleArrayStack;
+import Datastructure.MyStack.TripleArrayStack;
 
 public class TripleArrayStackTest {
 

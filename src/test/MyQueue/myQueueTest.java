@@ -1,6 +1,6 @@
-package test;
+package test.MyQueue;
 
-import Datastructure.myQueue;
+import Datastructure.MyQueue.myQueue;
 import org.junit.Test;
 
 import java.util.EmptyStackException;

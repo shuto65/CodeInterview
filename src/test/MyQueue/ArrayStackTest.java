@@ -1,12 +1,12 @@
-package test;
+package test.MyQueue;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Datastructure.Stack;
-import Datastructure.Stack.Node;
+import Datastructure.MyStack.Stack;
+import Datastructure.MyStack.Stack.Node;
 
 public class ArrayStackTest {
 

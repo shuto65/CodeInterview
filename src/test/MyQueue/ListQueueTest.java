@@ -1,12 +1,12 @@
-package test;
+package test.MyQueue;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
-import Datastructure.EmptyQueueException;
+import Datastructure.MyQueue.EmptyQueueException;
 import org.junit.Test;
 
-import Datastructure.ListQueue;
+import Datastructure.MyQueue.ListQueue;
 
 public class ListQueueTest {
 

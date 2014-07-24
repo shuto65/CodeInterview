@@ -1,4 +1,4 @@
-package Datastructure;
+package Datastructure.MyStack;
 
 public class TripleArrayStack {
     static final int NUM_OF_ARRAY=3;

@@ -1,12 +1,10 @@
-package test;
+package test.MyQueue;
 
-import Datastructure.ArrayQueue;
-import org.junit.After;
+import Datastructure.MyQueue.ArrayQueue;
+import Datastructure.MyQueue.EmptyQueueException;
+import Datastructure.MyQueue.FullQueueException;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.lang.reflect.Array;
-import java.util.Stack;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -18,7 +16,7 @@ public class ArrayQueueTest {
     public void setup(){
         queue = new ArrayQueue(5);
     }
-
+/*
     @Test
     public void testEnqueue() {
         queue.enqueue(5);
@@ -27,7 +25,7 @@ public class ArrayQueueTest {
 
         assertThat(_actual, is(5));
     }
-
+*/
     @Test
     public void testSimpleDequeue() {
         queue.enqueue(10);
@@ -37,7 +35,7 @@ public class ArrayQueueTest {
         assertThat(_actual, is(10));
     }
 
-    @Test(expected=IndexOutOfBoundsException.class)
+    @Test(expected=EmptyQueueException.class)
     public void testDequeueException() {
 
         queue.enqueue(10);
@@ -47,7 +45,7 @@ public class ArrayQueueTest {
 
     }
 
-    @Test(expected=IndexOutOfBoundsException.class)
+    @Test(expected=FullQueueException.class)
     public void testEnqueueException() {
 
         for(int i=0; i <= 5; i++){

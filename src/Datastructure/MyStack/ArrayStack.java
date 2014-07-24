@@ -1,4 +1,4 @@
-package Datastructure;
+package Datastructure.MyStack;
 
 public class ArrayStack {
     //int[] num = new int[MAX_STACK_INT];

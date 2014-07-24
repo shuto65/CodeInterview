@@ -1,7 +1,5 @@
-package Datastructure;
-import java.util.*;
-import java.lang.Exception.*;
-import java.io.Serializable;
+package Datastructure.MyQueue;
+
 public class ListQueue {
 	Node head=null;
 	Node tail=null;

@@ -1,4 +1,4 @@
-package Datastructure;
+package Datastructure.MyQueue;
 
 /**
  * Created by inoueshuto on 2014/07/22.

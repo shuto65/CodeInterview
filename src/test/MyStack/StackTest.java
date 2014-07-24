@@ -1,13 +1,11 @@
-package test;
+package test.MyStack;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Datastructure.ArrayStack;
-import Datastructure.Stack;
-import Datastructure.Stack.Node;
+import Datastructure.MyStack.ArrayStack;
 
 public class StackTest {
 

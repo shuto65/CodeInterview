@@ -1,4 +1,4 @@
-package Datastructure;
+package Datastructure.MyQueue;
 
 
 public class EmptyQueueException extends RuntimeException {
